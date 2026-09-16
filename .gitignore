@@ -1,0 +1,28 @@
+# Build output
+**/[Bb]in/
+**/[Oo]bj/
+
+# Visual Studio and VS Code user files
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Test results and coverage
+TestResults/
+coverage/
+*.trx
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+packages/
+
+# OS files
+.DS_Store
+Thumbs.db
