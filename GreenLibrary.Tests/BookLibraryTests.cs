@@ -1,6 +1,7 @@
-using GreenLibrary.Data.Xml;
+using GreenLibrary.Interfaces;
 using GreenLibrary.Models;
 using GreenLibrary.Services;
+using Moq;
 
 namespace GreenLibrary.Tests;
 
@@ -9,7 +10,7 @@ public class BookLibraryTests
     [Test]
     public void Add_AddFewBooks()
     {
-        var library = new BookLibrary(new XmlBookStorage());
+        var library = new BookLibrary(new Mock<IBookStorage>().Object);
         var book = new Book("Test 1", "Test AAA", 202);
 
         library.Add(book);
@@ -20,7 +21,7 @@ public class BookLibraryTests
     [Test]
     public void SortByAuthorAndTitle_CustomSorting()
     {
-        var library = new BookLibrary(new XmlBookStorage());
+        var library = new BookLibrary(new Mock<IBookStorage>().Object);
         library.Add(new Book("B1", "B", 80));
         library.Add(new Book("A1", "A", 200));
         library.Add(new Book("C1", "C", 120));
@@ -35,7 +36,7 @@ public class BookLibraryTests
     [Test]
     public void SearchByTitle_Find1ByStr()
     {
-        var library = new BookLibrary(new XmlBookStorage());
+        var library = new BookLibrary(new Mock<IBookStorage>().Object);
         library.Add(new Book("test1AAA", "QQQQQ", 120));
         library.Add(new Book("test2BBB", "WWWWWW", 80));
         library.Add(new Book("test3CCC", "EEEEEE", 200));
