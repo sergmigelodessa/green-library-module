@@ -9,6 +9,7 @@ public class BookLibraryTests
     [Test]
     public void Add_AddFewBooks()
     {
+        // todo: mock repo.
         var library = new BookLibrary(new XmlBookStorage());
         var book = new Book("Test 1", "Test AAA", 202);
 
